@@ -1,0 +1,132 @@
+<html>
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Random Proverb Generator</title>
+    </head>
+    <style>
+        body{
+            background-image:url("proverb.jpg");
+        }
+        .aa{
+            height:50vh;
+            width:30%;
+            padding-right:40px;
+            margin-left:35%;
+            margin-top:5%;
+            background-color:white;
+            border-radius:10px;
+            border-color: white;
+
+        }
+        .item{
+            padding:90px;
+            padding-left:25px;
+            padding-top:20px;
+           
+        }
+       
+        #name1{
+           padding-left:70px;
+            padding-top:30px;
+        }
+        #refreshText{
+            margin-left:150px;
+            margin-top:5px;
+            
+            background-color: black;
+            border:none;
+            border-radius:10px;
+            padding:10px;
+           
+            padding-left:20px;
+            padding-right:20px;
+            color: white;
+            font-weight: 200;
+
+        }
+        #refreshText:hover{
+            background-color: grey;
+            color:black;
+
+        }
+        .last{
+            color:red;
+            padding-top:55px;
+            padding-left:60px;
+        }
+        #title{
+            font-size:500%;
+           padding-left: 15%;;
+            padding-top:30px;
+            color: rgb(165, 21, 141);
+
+        }
+    </style>
+    <body>
+        <h1 id="title"> PROVERB GENERATOR</h1>
+        <div class="aa">
+            <h2 id="name1">WELCOME </h2>
+        <div class="item">
+         <div class="type">Type:
+        <select id="domain" onclick="myFunction()">
+          
+            <option value="">Select One</option>
+            <option value="edu">EDUCATION</option>
+            <option value="life">LIFE</option>
+            <option value="motive">MOTIVATION</option>]
+            <option value="sad">SAD</option>
+        </select>  </div>
+       
+        <p>Proverb:</p>
+        <textarea id="proverb" cols="50" rows="3"></textarea>
+        <br><br>
+        <button id="refreshText" onclick="myFunction()">Next</button>
+        <br>
+        <div class="last">Thanks for Visiting.Come Again!</div>
+    </div>
+       
+</div>
+        <script>
+           var name= prompt("Enter your beautifull name!");
+           alert("Nice name!!!");
+           name=name.toUpperCase();
+        document.querySelector("#name1").innerHTML+=name;
+
+            function myFunction(){
+            var domain=document.getElementById("domain").value;
+            var proverb_edu=["“The more that you read, the more things you will know, the more that you learn, the more places you’ll go.” —Dr. Seuss"," “Education is one thing no one can take away from you.” —Elin Nordegren"," “A simple but powerful reminder of the positive domino effect a good education can have on many aspects of a person’s life and outlook.”"," “Education is the key that unlocks the golden door to freedom.” —George Washington Carver","“Give a man a fish and you feed him for a day; teach a man to fish and you feed him for a lifetime.” —Maimonides","“Education’s purpose is to replace an empty mind with an open one.” —Malcolm Forbes"," “Education is what remains after one has forgotten what one has learned in school.” —Albert Einstein","“Education is not preparation for life; education is life itself.” —John Dewey","“The aim of education is the knowledge, not of facts, but of values.” —William S. Burroughs","What makes a child gifted and talented may not always be good grades in school, but a different way of looking at the world and learning.—Chuck Grassley"," “Education is the vaccine of violence.” —Edward James Olmos"," “Learning is not compulsory… Neither is survival.” —W. Edwards Demin","“The purpose of education is to turn mirrors into windows.” —Sydney J. Harris"," “Intelligence plus character — that is the goal of true education.” —Martin Luther King Jr."," “Education is the most powerful weapon which you can use to change the world.” —Nelson Mandela","“The ability to read, write, and analyze; the confidence to stand up and demand justice and equality; the qualifications and connections to get your foot in the door and take your seat at the table — all of that starts with education.” —Michelle Obama"," “A child without education is like a bird without wings.” —Tibetan Proverb","“The purpose of learning is growth, and our minds, unlike our bodies, can continue growing as we continue to live.” —Mortimer Adler"];
+            var proverb_life=["Life is a challenge - meet it."," Life is a dream - realize it."," Life is a sacrifice - offer it."," Life is love - enjoy."];
+            var proverb_m=["Find out who you are and do it on purpose. — Dolly Parton.",
+            "Live life to the fullest, and focus on the positive.",
+            "You'll never do a whole lot unless you're brave enough to try." ,
+            "Always turn a negative situation into a positive situation." ];
+            var proverb_sad=["Tears come from the heart and not from the brain. –Leonardo da Vinci.",
+"Long after I have give up, my heart still searches for you without my permission.",
+"The good times of today are the sad thoughts of tomorrow." ,
+"Some people feel like they don't deserve love."];
+
+            if(domain==="edu"){
+
+                 document.querySelector("#proverb").innerHTML=proverb_edu[(Math.floor(Math.random()*proverb_edu.length))];
+                }
+
+            else if(domain==="life"){ 
+
+                 document.querySelector("#proverb").innerHTML=proverb_life[(Math.floor(Math.random()*proverb_life.length))];
+                }
+
+            else if(domain==="motive"){
+                document.querySelector("#proverb").innerHTML=proverb_m[(Math.floor(Math.random()*proverb_m.length))];
+
+            }
+            else if(domain==="sad"){
+                document.querySelector("#proverb").innerHTML=proverb_sad[(Math.floor(Math.random()*proverb_sad.length))];
+            }
+
+            }
+
+        </script>
+    </body>
+</html>
